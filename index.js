@@ -1,0 +1,6 @@
+// ... existing imports ...
+app.use(cors({
+  origin: ['http://localhost:5173', 'your-frontend-vercel-url'],
+  credentials: true
+}));
+// ... rest of your code ...
