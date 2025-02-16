@@ -32,6 +32,9 @@ app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5007;
+app.get('/', (req, res) => {
+  res.json({ message: 'Shopping Cart API is running' });
+});
 app.listen(PORT, (err) => {
   if (err) {
     console.error('Error starting server:', err);
