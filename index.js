@@ -37,10 +37,8 @@ app.use('/api/user', userRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 5007;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
+// Always listen on the assigned port (important for Render)
+const PORT = process.env.PORT || 5007;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 module.exports = app;
